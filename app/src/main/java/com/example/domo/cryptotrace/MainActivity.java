@@ -58,7 +58,7 @@ private List<Product> listing;
 //            }
 //        });
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycle);
+        recyclerView = findViewById(R.id.recycle);
 //        ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(this).build();
 //        ImageLoader.getInstance().init(config);
         listing = new ArrayList<>();
@@ -206,7 +206,7 @@ private List<Product> listing;
         private int space;
         private boolean include;
 
-        public GridSpacingdecoration(int span, int space, boolean include) {
+        private GridSpacingdecoration(int span, int space, boolean include) {
             this.span = span;
             this.space = space;
             this.include = include;
@@ -237,13 +237,14 @@ private List<Product> listing;
 
     /**
      * Converting dp to pixel
+     * +Ispravljen Warning za public u private u metodi dpToPx
      */
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
-    //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main.xml
+    //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main
     //public void forceCrash(View view) {
    //     throw new RuntimeException("This is a crash");
    // }
