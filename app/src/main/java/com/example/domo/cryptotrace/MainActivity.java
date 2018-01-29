@@ -245,9 +245,9 @@ private List<Product> listing;
     }
 
     //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main
-   // public void forceCrash(View view) {
-    //    throw new RuntimeException("This is a crash");
-   // }
+   // --NekiText--public void forceCrash(View view) {
+    // --NekiText--   throw new RuntimeException("This is a crash");
+   //--NekiText-- }
 
 
 
