@@ -135,6 +135,7 @@ private List<Product> listing;
         if (preferences.contains("color")) {
             if (preferences.getString("color", "0").equals("1")) {
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+//ovo sranje->  setTheme(R.style.AppTheme); --> NE RADI!! --
             } else if (preferences.getString("color", "0").equals("2")) {
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
 
