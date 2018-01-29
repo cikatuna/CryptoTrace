@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="AlwaysShowAction">
+    <item
+        android:id="@+id/your_item_id"
+        android:title="Settings"
+        android:showAsAction="always"
+        />
+    <!--android:icon="@drawable/your_drawable_id"-->
+</menu>

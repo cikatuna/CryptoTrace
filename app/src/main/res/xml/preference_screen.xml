@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/colorArray"
+        android:entryValues="@array/colorValue"
+        android:key="color"
+        android:summary="Molimo da odaberete boju pozadine aplikacije"
+        android:title="Odaberi boju pozadine"/>
+
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="notification"
+        android:summary="Želite li primati obavijesti od aplikacije?"
+        android:title="Obavijesti"/>
+
+
+</PreferenceScreen>

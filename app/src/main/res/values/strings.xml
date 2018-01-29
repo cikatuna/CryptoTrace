@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CryptoTrace</string>
+    <string-array name="colorArray">
+        <item>Bijela</item>
+        <item>Crna</item>
+        <item>Plava</item>
+
+
+    </string-array>
+    <string-array name="colorValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+
+</resources>
