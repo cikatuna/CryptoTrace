@@ -243,10 +243,10 @@ private List<Product> listing;
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
-    //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA
-    public void forceCrash(View view) {
-        throw new RuntimeException("This is a crash");
-    }
+    //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main.xml
+    //public void forceCrash(View view) {
+   //     throw new RuntimeException("This is a crash");
+   // }
 
 
 
