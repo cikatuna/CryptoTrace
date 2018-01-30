@@ -8,13 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!--<item name="android:textColor">@color/White</item>-->
     </style>
-    <style name="AppTheme2" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorSecondary">@color/Gold</item>
-        <item name="android:textColorPrimary">@color/Gold</item>
-        <item name="android:textColor">@color/White</item>
-    </style>
+    <!--<style name="AppTheme2" parent="Theme.AppCompat.Light">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/White</item>-->
+        <!--<item name="colorPrimaryDark">@color/White</item>-->
+        <!--<item name="colorAccent">@color/White</item>-->
+        <!--<item name="android:textColorSecondary">@color/Gold</item>-->
+        <!--<item name="android:textColorPrimary">@color/Gold</item>-->
+        <!--<item name="android:textColor">@color/White</item>-->
+    <!--</style>-->
+
+    <!--<style name="darkab" parent="android:Theme.Holo.Light.DarkActionBar"></style>-->
+    <!--<style name="light" parent="android:Theme.Holo.Light"></style>-->
+    <!--<style name="dark" parent="android:Theme.Holo"/>-->
 </resources>

@@ -12,12 +12,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.Menu;
+import android.view.View;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
 
@@ -119,12 +117,6 @@ private List<Product> listing;
         super.onResume();
         getPreference();
     }
-//Ovo nije radilo- pa sam ponovno napravio
-//    @Override
-//    protected void onReume() {
-//        super.onResume();
-//        getPreference();
-//    }
 
 
     //Ovo je klasa koju smo sami gore kreirali kako bi mogli odrediti boje od pozadine kroz Settings
@@ -135,10 +127,14 @@ private List<Product> listing;
         if (preferences.contains("color")) {
             if (preferences.getString("color", "0").equals("1")) {
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+
+
+
+//                findViewById(R.id.price)
 //ovo sranje->  setTheme(R.style.AppTheme); --> NE RADI!! --
             } else if (preferences.getString("color", "0").equals("2")) {
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-
+//                deepChangeTextColor();
 
 
             } else {
@@ -147,17 +143,17 @@ private List<Product> listing;
             }
         }
     }
+//    public void deepChangeTextColor(ViewGroup parentLayout){
+//        for (int count=0; count < parentLayout.getChildCount(); count++){
+//            View view = parentLayout.getChildAt(count);
+//            if(view instanceof TextView){
+//                ((TextView)view).setTextColor(Color.WHITE);
+//            } else if(view instanceof ViewGroup){
+//                deepChangeTextColor((ViewGroup)view);
+//            }
+//        }
 
-    private void deepChangeTextColor(ViewGroup parentLayout){
-        for (int count=0; count < parentLayout.getChildCount(); count++){
-            View view = parentLayout.getChildAt(count);
-            if(view instanceof TextView){
-                ((TextView)view).setTextColor(Color.WHITE);
-            } else if(view instanceof ViewGroup){
-                deepChangeTextColor((ViewGroup)view);
-            }
-        }
-    }
+//    }
 
 
     //OLD ACTION BAR EDIT
