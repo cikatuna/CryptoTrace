@@ -80,16 +80,23 @@ public class MainActivity extends AppCompatActivity {
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 //                findViewById(R.id.price)
 //ovo sranje->  setTheme(R.style.AppTheme); --> NE RADI!! --
-            } else if (preferences.getString("color", "0").equals("2")) {
+            } if (preferences.getString("color", "0").equals("2")) {
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
 //                deepChangeTextColor();
-            } else {
-                getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+            } else if (preferences.getString("color","0").equals("3")){
+                getWindow().getDecorView().setBackgroundColor(Color.RED);
+            }else{
+                getWindow().getDecorView().setBackgroundColor(Color.MAGENTA);
             }
         }
     }
 
-
+//} else if (preferences.getString("color", "0").equals("2")) {
+//        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
+////                deepChangeTextColor();
+//        } else {
+//        getWindow().getDecorView().setBackgroundColor(Color.RED);
+//        }
 
 
 

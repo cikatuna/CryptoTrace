@@ -10,7 +10,7 @@ import android.widget.Toast;
  */
 public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-    public TextView name, symbol, rank, price;
+    public TextView name, symbol, rank, price, percentChange1h, percentChange24h,percentChange7d;
 
     public RecyclerViewHolder(View itemView) {
         super(itemView);
@@ -21,7 +21,9 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.
         symbol= itemView.findViewById(R.id.symbol);
         rank = itemView.findViewById(R.id.rank);
         price=itemView.findViewById(R.id.price);
-
+        percentChange1h=itemView.findViewById(R.id.percent_change_1h);
+        percentChange24h=itemView.findViewById(R.id.percent_change_24h);
+        percentChange7d=itemView.findViewById(R.id.percent_change_7d);
     }
 
     @Override

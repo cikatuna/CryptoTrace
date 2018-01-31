@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:text="name"
         android:textSize="20sp"
+        android:textColor="@color/Blue"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         />
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="symbol"
+        android:textColor="@color/Blue"
         android:textSize="20sp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -31,6 +33,7 @@
         android:textSize="20sp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:textColor="@color/Blue"
         android:layout_marginStart="@dimen/activity_horizontal_margin" />
     <TextView
         android:id="@+id/price"
@@ -38,9 +41,43 @@
         android:layout_height="wrap_content"
         android:text="price"
         android:textSize="20sp"
+        android:textColor="@color/Blue"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin" />
+    <TextView
+        android:id="@+id/percent_change_1h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change % per hour"
+        android:textSize="20sp"
+        android:textColor="@color/Green"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/percent_change_24h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change % per 24hour"
+        android:textSize="20sp"
+        android:textColor="@color/Green"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+    <TextView
+        android:id="@+id/percent_change_7d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change % per 7 days"
+        android:textSize="20sp"
+        android:textColor="@color/Green"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+
 
 
     <View

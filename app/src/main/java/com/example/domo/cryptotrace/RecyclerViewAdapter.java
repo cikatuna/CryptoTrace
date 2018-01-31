@@ -34,6 +34,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         holder.symbol.setText(item.get(position).getSymbol());
         holder.rank.setText(item.get(position).getRank());
         holder.price.setText(item.get(position).getPrice()+"$");
+        holder.percentChange1h.setText("Izmjena u jednom satu:"+""+item.get(position).getPercentChange1h()+"%");
+        holder.percentChange24h.setText("Izmjena u 24h:"+""+item.get(position).getPercentChange24h()+"%");
+        holder.percentChange7d.setText("Izmjena u 7 dana:"+""+item.get(position).getPercentChange7d()+"%");
     }
 
     @Override

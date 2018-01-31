@@ -12,22 +12,33 @@ public class User {
     private String name;
     private String symbol;
     private String rank;
-
     @SerializedName("price_usd")
     @Expose
     private String price;
+       @SerializedName("percent_change_1h")
+    @Expose
+    private String percentChange1h;
+    @SerializedName("percent_change_24h")
+    @Expose
+    private String percentChange24h;
+    @SerializedName("percent_change_7d")
+    @Expose
+    private String percentChange7d;
 
 
     public User() {
     }
 
 
-    public User(String name, String rank) {
+    public User(String name, String rank, String symbol, String price, String percentChange1h, String percentChange24h,String percentChange7d) {
         super();
         this.name = name;
         this.symbol = symbol;
         this.rank = rank;
         this.price=price;
+        this.percentChange1h=percentChange1h;
+        this.percentChange24h=percentChange24h;
+        this.percentChange7d=percentChange7d;
     }
 
     public String getName() {
@@ -42,7 +53,7 @@ public class User {
         return symbol;
     }
 
-    public void setSymbol(String name) {
+    public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 
@@ -59,9 +70,33 @@ public class User {
         return price;
     }
 
-    public void setPrice(String rank) {
+    public void setPrice(String price) {
         this.price = price;
     }
+    public String getPercentChange1h() {
+        return percentChange1h;
+    }
+
+    public void setpercentChange1h(String percentChange1h) {
+        this.percentChange1h = percentChange1h;
+    }
+    public String getPercentChange24h() {
+        return percentChange24h;
+    }
+
+    public void setpercentChange24h(String percentChange24h) {
+        this.percentChange24h = percentChange24h;
+    }
+
+    public String getPercentChange7d() {
+        return percentChange7d;
+    }
+
+    public void setpercentChange7d(String percentChange7d) {
+        this.percentChange7d = percentChange7d;
+    }
+
+
 
 
 }
