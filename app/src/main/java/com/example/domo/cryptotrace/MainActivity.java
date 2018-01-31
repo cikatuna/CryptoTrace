@@ -31,9 +31,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-//private Button bOpenPref;
-//private RecyclerView recyclerView;
-//private List<Product> listing;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +43,9 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(fabric);
         setContentView(R.layout.activity_main);
         getUserList();
-
+    }
 
 //Kreiranje i dovlacenje Preferences screen-a
-
         //Ovo je zakomentirano jer više nema svrhu , prebačeno u ActionBar Vidi onOptionsItemSelected klasu
 //        bOpenPref = findViewById(R.id.bOpenPreferences);
 //
@@ -60,58 +57,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-//        recyclerView = findViewById(R.id.recycle);
-////        ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(this).build();
-////        ImageLoader.getInstance().init(config);
-//        listing = new ArrayList<>();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://api.coinmarketcap.com/v1/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        aPiService service = retrofit.create(aPiService.class);
-//        Call<List<Product>> call=   service.getbookdetails();
-//        call.enqueue(new Callback<List<Product>>() {
-//            @Override
-//            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-//
-//                List<Product> list = response.body();
-//                Product product = null;
-//                for (int i = 0; i < list.size(); i++) {
-//                    product = new Product();
-//                    String name = list.get(i).getName();
-//                    String color = list.get(i).getRank();
-//                    String symbol = list.get(i).getSymbol();
-//                  //  String image = list.get(i).getImageurl();
-//                    String price = list.get(i).getPriceUsd();
-//                    product.setPriceUsd(price);
-//                    product.setSymbol(symbol);
-//                    product.setRank(color);
-//                    product.setName(name);
-//                  //  product.setImageurl(image);
-//                    listing.add(product);
-//                }
-//
-//
-//                Recycleradapter recyclerAdapter = new Recycleradapter(listing);
-//                RecyclerView.LayoutManager recyce = new GridLayoutManager(MainActivity.this, 2);
-//                // RecyclerView.LayoutManager recyce = new LinearLayoutManager(MainActivity.this);
-//                recyclerView.addItemDecoration(new GridSpacingdecoration(2, dpToPx(10), true));
-//                recyclerView.setLayoutManager(recyce);
-//            //    recyclerView.setItemAnimator(new DefaultItemAnimator());
-//                recyclerView.setAdapter(recyclerAdapter);
-//            }
-//
-//
-//
-//            @Override
-//            public void onFailure(Call<List<Product>> call, Throwable t) {
-//
-//            }
-//        });
-//
-            }
+
 
 
 
