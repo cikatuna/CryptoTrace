@@ -31,7 +31,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         holder.name.setText(item.get(position).getName());
-        holder.hobby.setText(item.get(position).getRank());
+        holder.symbol.setText(item.get(position).getSymbol());
+        holder.rank.setText(item.get(position).getRank());
+        holder.price.setText(item.get(position).getPrice()+"$");
     }
 
     @Override
