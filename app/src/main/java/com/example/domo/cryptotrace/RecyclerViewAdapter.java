@@ -30,10 +30,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        holder.name.setText(item.get(position).getName());
-        holder.symbol.setText(item.get(position).getSymbol());
-        holder.rank.setText(item.get(position).getRank());
-        holder.price.setText(item.get(position).getPrice()+"$");
+        holder.name.setText("Ime: "+item.get(position).getName());
+        holder.symbol.setText("Simbol: "+item.get(position).getSymbol());
+        holder.rank.setText("Rank:"+item.get(position).getRank());
+        holder.price.setText("Trenutna Cijena: "+item.get(position).getPrice()+"$");
         holder.percentChange1h.setText("Izmjena u jednom satu:"+""+item.get(position).getPercentChange1h()+"%");
         holder.percentChange24h.setText("Izmjena u 24h:"+""+item.get(position).getPercentChange24h()+"%");
         holder.percentChange7d.setText("Izmjena u 7 dana:"+""+item.get(position).getPercentChange7d()+"%");

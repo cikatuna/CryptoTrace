@@ -78,11 +78,8 @@ public class MainActivity extends AppCompatActivity {
         if (preferences.contains("color")) {
             if (preferences.getString("color", "0").equals("1")) {
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-//                findViewById(R.id.price)
-//ovo sranje->  setTheme(R.style.AppTheme); --> NE RADI!! --
-            } if (preferences.getString("color", "0").equals("2")) {
+            } else if (preferences.getString("color", "0").equals("2")) {
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-//                deepChangeTextColor();
             } else if (preferences.getString("color","0").equals("3")){
                 getWindow().getDecorView().setBackgroundColor(Color.RED);
             }else{
@@ -90,14 +87,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-//} else if (preferences.getString("color", "0").equals("2")) {
-//        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-////                deepChangeTextColor();
-//        } else {
-//        getWindow().getDecorView().setBackgroundColor(Color.RED);
-//        }
-
 
 
 
@@ -122,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    //OVO JE METODA ZA PRIKAZIVANJE JSON PODATAKA PREKO RETROFITA
     private void getUserList() {
         try {
             APIService service = ApiClient.getRetrofit().create(APIService.class);
