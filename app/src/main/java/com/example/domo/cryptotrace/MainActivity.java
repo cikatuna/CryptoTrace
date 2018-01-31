@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.Menu;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         Fabric.with(fabric);
         setContentView(R.layout.activity_main);
+        getUserList();
+
 
 //Kreiranje i dovlacenje Preferences screen-a
 
@@ -108,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //
-//            }
+            }
 
-    }
+
 
     //Ovo nam pomaže kako nebi morali gasiti aplikaciju da se Settings prikaže
     @Override
@@ -118,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         getPreference();
     }
+
 
 
     //Ovo je klasa koju smo sami gore kreirali kako bi mogli odrediti boje od pozadine kroz Settings
@@ -165,56 +169,38 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void getUserList() {
+        try {
+            APIService service = ApiClient.getRetrofit().create(APIService.class);
+            Call<List<User>> call = service.getUserData();
+
+            call.enqueue(new Callback<List<User>>() {
+                @Override
+                public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                    //Log.d("onResponse", response.message());
+
+                    List<User> userList = response.body();
+                   LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+
+                    RecyclerView recyclerView = (RecyclerView)
+                            findViewById(R.id.recycler);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    RecyclerViewAdapter recyclerViewAdapter =
+                            new RecyclerViewAdapter(userList);
+
+                    recyclerView.setAdapter(recyclerViewAdapter);
+
+
+                }
+
+                @Override
+                public void onFailure(Call<List<User>> call, Throwable t) {
+
+                }
+            });
+        }catch (Exception e) {}
+
+    }
 }
-//
-//    public class GridSpacingdecoration extends RecyclerView.ItemDecoration {
-//
-//        private int span;
-//        private int space;
-//        private boolean include;
-//
-//        private GridSpacingdecoration(int span, int space, boolean include) {
-//            this.span = span;
-//            this.space = space;
-//            this.include = include;
-//        }
-//
-//        @Override
-//        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-//            int position = parent.getChildAdapterPosition(view);
-//            int column = position % span;
-//
-//            if (include) {
-//                outRect.left = space - column * space / span;
-//                outRect.right = (column + 1) * space / span;
-//
-//                if (position < span) {
-//                    outRect.top = space;
-//                }
-//                outRect.bottom = space;
-//            } else {
-//                outRect.left = column * space / span;
-//                outRect.right = space - (column + 1) * space / span;
-//                if (position >= span) {
-//                    outRect.top = space;
-//                }
-//            }
-//        }
-//    }
-//
-//    /**
-//     * Converting dp to pixel
-//     * +Ispravljen Warning za public u private u metodi dpToPx
-//     */
-//    private int dpToPx(int dp) {
-//        Resources r = getResources();
-//        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-//    }
-
-    //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main
-   // public void forceCrash(View view) {
-    //    throw new RuntimeException("This is a crash");
-   // }
-
-
 

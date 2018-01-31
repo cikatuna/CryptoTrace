@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CryptoTrace.iml" filepath="$PROJECT_DIR$/.idea/CryptoTrace.iml" />
-      <module fileurl="file://C:\Users\Domo\Desktop\CryptoTrace\CryptoTrace\CryptoTrace.iml" filepath="C:\Users\Domo\Desktop\CryptoTrace\CryptoTrace\CryptoTrace.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Domo\Desktop\CryptoTrace\CryptoTrace\app\app.iml" filepath="C:\Users\Domo\Desktop\CryptoTrace\CryptoTrace\app\app.iml" />
     </modules>
   </component>
 </project>
