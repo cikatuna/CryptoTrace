@@ -30,9 +30,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-private Button bOpenPref;
-private RecyclerView recyclerView;
-private List<Product> listing;
+//private Button bOpenPref;
+//private RecyclerView recyclerView;
+//private List<Product> listing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +43,7 @@ private List<Product> listing;
                 .build();
         Fabric.with(fabric);
         setContentView(R.layout.activity_main);
+
 //Kreiranje i dovlacenje Preferences screen-a
 
         //Ovo je zakomentirano jer više nema svrhu , prebačeno u ActionBar Vidi onOptionsItemSelected klasu
@@ -56,60 +57,60 @@ private List<Product> listing;
 //            }
 //        });
 
-        recyclerView = findViewById(R.id.recycle);
-//        ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(this).build();
-//        ImageLoader.getInstance().init(config);
-        listing = new ArrayList<>();
+//        recyclerView = findViewById(R.id.recycle);
+////        ImageLoaderConfiguration config=new ImageLoaderConfiguration.Builder(this).build();
+////        ImageLoader.getInstance().init(config);
+//        listing = new ArrayList<>();
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("https://api.coinmarketcap.com/v1/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        aPiService service = retrofit.create(aPiService.class);
+//        Call<List<Product>> call=   service.getbookdetails();
+//        call.enqueue(new Callback<List<Product>>() {
+//            @Override
+//            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+//
+//                List<Product> list = response.body();
+//                Product product = null;
+//                for (int i = 0; i < list.size(); i++) {
+//                    product = new Product();
+//                    String name = list.get(i).getName();
+//                    String color = list.get(i).getRank();
+//                    String symbol = list.get(i).getSymbol();
+//                  //  String image = list.get(i).getImageurl();
+//                    String price = list.get(i).getPriceUsd();
+//                    product.setPriceUsd(price);
+//                    product.setSymbol(symbol);
+//                    product.setRank(color);
+//                    product.setName(name);
+//                  //  product.setImageurl(image);
+//                    listing.add(product);
+//                }
+//
+//
+//                Recycleradapter recyclerAdapter = new Recycleradapter(listing);
+//                RecyclerView.LayoutManager recyce = new GridLayoutManager(MainActivity.this, 2);
+//                // RecyclerView.LayoutManager recyce = new LinearLayoutManager(MainActivity.this);
+//                recyclerView.addItemDecoration(new GridSpacingdecoration(2, dpToPx(10), true));
+//                recyclerView.setLayoutManager(recyce);
+//            //    recyclerView.setItemAnimator(new DefaultItemAnimator());
+//                recyclerView.setAdapter(recyclerAdapter);
+//            }
+//
+//
+//
+//            @Override
+//            public void onFailure(Call<List<Product>> call, Throwable t) {
+//
+//            }
+//        });
+//
+//            }
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.coinmarketcap.com/v1/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        aPiService service = retrofit.create(aPiService.class);
-        Call<List<Product>> call=   service.getbookdetails();
-        call.enqueue(new Callback<List<Product>>() {
-            @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-
-                List<Product> list = response.body();
-                Product product = null;
-                for (int i = 0; i < list.size(); i++) {
-                    product = new Product();
-                    String name = list.get(i).getName();
-                    String color = list.get(i).getRank();
-                    String symbol = list.get(i).getSymbol();
-                  //  String image = list.get(i).getImageurl();
-                    String price = list.get(i).getPriceUsd();
-                    product.setPriceUsd(price);
-                    product.setSymbol(symbol);
-                    product.setRank(color);
-                    product.setName(name);
-                  //  product.setImageurl(image);
-                    listing.add(product);
-                }
-
-
-                Recycleradapter recyclerAdapter = new Recycleradapter(listing);
-                RecyclerView.LayoutManager recyce = new GridLayoutManager(MainActivity.this, 2);
-                // RecyclerView.LayoutManager recyce = new LinearLayoutManager(MainActivity.this);
-                recyclerView.addItemDecoration(new GridSpacingdecoration(2, dpToPx(10), true));
-                recyclerView.setLayoutManager(recyce);
-            //    recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setAdapter(recyclerAdapter);
-            }
-
-
-
-            @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
-
-            }
-        });
-
-            }
-
-
+    }
 
     //Ovo nam pomaže kako nebi morali gasiti aplikaciju da se Settings prikaže
     @Override
@@ -127,50 +128,18 @@ private List<Product> listing;
         if (preferences.contains("color")) {
             if (preferences.getString("color", "0").equals("1")) {
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-
-
-
 //                findViewById(R.id.price)
 //ovo sranje->  setTheme(R.style.AppTheme); --> NE RADI!! --
             } else if (preferences.getString("color", "0").equals("2")) {
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
 //                deepChangeTextColor();
-
-
             } else {
                 getWindow().getDecorView().setBackgroundColor(Color.BLUE);
-
             }
         }
     }
-//    public void deepChangeTextColor(ViewGroup parentLayout){
-//        for (int count=0; count < parentLayout.getChildCount(); count++){
-//            View view = parentLayout.getChildAt(count);
-//            if(view instanceof TextView){
-//                ((TextView)view).setTextColor(Color.WHITE);
-//            } else if(view instanceof ViewGroup){
-//                deepChangeTextColor((ViewGroup)view);
-//            }
-//        }
-
-//    }
 
 
-    //OLD ACTION BAR EDIT
-//        ActionBar actionBar = getSupportActionBar();
-////        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_24dp);
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-//        actionBar.setDisplayShowHomeEnabled(true);
-//        actionBar.setTitle(“ActivityName”);
-
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_24dp);
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-//        actionBar.setDisplayShowHomeEnabled(true);
-//        actionBar.setTitle(“Edit Conference”);
 
 
 
@@ -196,60 +165,56 @@ private List<Product> listing;
         return super.onOptionsItemSelected(item);
     }
 
-
-    public class GridSpacingdecoration extends RecyclerView.ItemDecoration {
-
-        private int span;
-        private int space;
-        private boolean include;
-
-        private GridSpacingdecoration(int span, int space, boolean include) {
-            this.span = span;
-            this.space = space;
-            this.include = include;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int position = parent.getChildAdapterPosition(view);
-            int column = position % span;
-
-            if (include) {
-                outRect.left = space - column * space / span;
-                outRect.right = (column + 1) * space / span;
-
-                if (position < span) {
-                    outRect.top = space;
-                }
-                outRect.bottom = space;
-            } else {
-                outRect.left = column * space / span;
-                outRect.right = space - (column + 1) * space / span;
-                if (position >= span) {
-                    outRect.top = space;
-                }
-            }
-        }
-    }
-
-    /**
-     * Converting dp to pixel
-     * +Ispravljen Warning za public u private u metodi dpToPx
-     */
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
+}
+//
+//    public class GridSpacingdecoration extends RecyclerView.ItemDecoration {
+//
+//        private int span;
+//        private int space;
+//        private boolean include;
+//
+//        private GridSpacingdecoration(int span, int space, boolean include) {
+//            this.span = span;
+//            this.space = space;
+//            this.include = include;
+//        }
+//
+//        @Override
+//        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+//            int position = parent.getChildAdapterPosition(view);
+//            int column = position % span;
+//
+//            if (include) {
+//                outRect.left = space - column * space / span;
+//                outRect.right = (column + 1) * space / span;
+//
+//                if (position < span) {
+//                    outRect.top = space;
+//                }
+//                outRect.bottom = space;
+//            } else {
+//                outRect.left = column * space / span;
+//                outRect.right = space - (column + 1) * space / span;
+//                if (position >= span) {
+//                    outRect.top = space;
+//                }
+//            }
+//        }
+//    }
+//
+//    /**
+//     * Converting dp to pixel
+//     * +Ispravljen Warning za public u private u metodi dpToPx
+//     */
+//    private int dpToPx(int dp) {
+//        Resources r = getResources();
+//        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+//    }
 
     //Metoda za crashanje aplikacije - test CRASHLYTICS plugina od FABRICA+button u activity_main
    // public void forceCrash(View view) {
     //    throw new RuntimeException("This is a crash");
    // }
-
-
-
-
-}
 
 
 
